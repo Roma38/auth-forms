@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset='utf-8'>
+  <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+  <title>Login/Register form</title>
+  <meta name='viewport' content='width=device-width, initial-scale=1'>
+  <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <h1 class="page-title">Login To Your Account / Register New</h1>
+
+  <div class="container">
+    <div class="container__header">
+      <div class="container__header__icon">
+        <img src="./assets/header-icon.png" alt="icon">
+      </div>
+      <h2 class="container__header__title">Login To Your Account / Register New</h2>
+    </div>
+
+    <div class="forms-wrapper">
+      <form class="form form--login" id="loginForm">
+        <div class="divider">
+          <div class="divider__circle">/</div>
+        </div>
+        <input placeholder="User Name" type="text" name="userName" id="loginUserName" class="input-field" />
+        <input placeholder="Password" type="password" name="password" id="loginPassword" class="input-field">
+        <div class="checkbox-wrapper">
+          <input type="checkbox" name="rememberPassword" id="rememberPassword" class="invisibleCheckbox" />
+          <label class="checkbox-label" for="rememberPassword"></label>
+          <div class="popup">You no longer need to enter a password every time you use the site</div>
+        </div>
+        <button type="submit" class="submit-button submit-button--login">Login</button>
+      </form>
+
+      <div class="forms-divider"></div>
+
+      <form class="form form--register" id="registerForm">
+        <h3 class="form-title">Register</h3>
+        <label class="input-label">Email<br />
+          <input type="email" name="email" id="registerEmail" class="input-field" />
+        </label>
+        <label class="input-label">User Name<br />
+          <input type="text" name="userName" id="registerUserName" class="input-field" />
+        </label>
+        <label class="input-label">Password<br />
+          <input type="password" name="assword" id="registerPassword" class="input-field" />
+        </label>
+        <button type="submit" class="submit-button submit-button--register">Register</button>
+      </form>
+    </div>
+  </div>
+
+  <script src='script.js'></script>
+</body>
+
+</html>

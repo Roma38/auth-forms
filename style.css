@@ -1,0 +1,230 @@
+body {
+  margin: 0;
+  font-family: "Source Sans Pro", sans-serif;
+  font-weight: 600;
+  background: url("./assets/background.png") #f2f2f2 center 30% no-repeat;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-title {
+  color: #b0b0b0;
+  font-size: 27px;
+  margin-bottom: 60px;
+  margin-left: 13%;
+}
+
+.container {
+  border-radius: 9px;
+  background-color: #f5f5f5;
+  border: 1px solid #cecece;
+  margin: 0 10px 50px;
+  max-width: 827px;
+}
+
+.container__header {
+  background-color: #34b7ce;
+  color: white;
+  border-radius: 9px 9px 0 0;
+  display: flex;
+  justify-content: left;
+  margin: -1px;
+}
+
+.container__header__title {
+  font-size: 34px;
+  margin-right: 20px;
+
+}
+
+.container__header__icon {
+  background-color: #259cb1;
+  border-radius: 100%;
+  display: inline-block;
+  min-width: 74px;
+  width: 74px;
+  height: 74px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px 30px 25px;
+}
+
+.forms-divider {
+  border-left: 1px solid #e7e7e7;
+  margin: 77px 0 67px;
+}
+
+.forms-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form {
+  flex-grow: 1;
+  padding: 30px;
+  color: #676767;
+  flex-basis: 275px;
+}
+
+.divider {
+  height: 1px;
+  background: linear-gradient(to right, #f5f5f5, #dcdcdc, #f5f5f5);
+  position: relative;
+  margin: 30px 10px;
+}
+
+.divider__circle {
+  position: absolute;
+  left: calc(50% - 17px);
+  bottom: -18px;
+  width: 35px;
+  height: 35px;
+  background-color: #eaeaea;
+  border: 1px solid #dcdcdc;
+  color: #bbbbbb;
+  border-radius: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-field {
+  border-radius: 9px;
+  border: 1px solid #dcdcdc;
+  margin: 15px 0;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+}
+
+.form--login .input-field {
+  font-size: 22px;
+  height: 62px;
+  padding-left: 56px;
+  box-sizing: border-box;
+}
+
+.input-field::placeholder {
+  color: #e9e9e9;
+}
+
+.form--register .input-field {
+  height: 52px;
+  padding-left: 20px;
+  font-size: 16px;
+}
+
+.form-title {
+  font-size: 20px;
+  margin: 0;
+  margin-bottom: 33px;
+}
+
+.input-label {
+  font-size: 16px;
+  font-weight: 400;
+  color: #a7a7a7;
+}
+
+.popup {
+  position: absolute;
+  max-width: 256px;
+  /* color: #cbcbcb; */
+  background-color: white;
+  border-radius: 6px;
+  box-shadow: 0 4px 9px 1px rgba(0, 0, 0, 0.15);
+  padding: 15px;
+  left: -6vw;
+  top: 35px;
+  /* font-size: 14px; */
+  display: none;
+}
+
+.checkbox-wrapper {
+  position: relative;
+  color: #cbcbcb;
+  font-size: 14px;
+  margin-top: 45px;
+  display: inline-block;
+}
+
+.invisibleCheckbox {
+  display: none;
+}
+
+.checkbox-label:hover + .popup {
+  display: block;
+}
+
+.invisibleCheckbox:checked + .checkbox-label::before {
+  content: "✓";
+  color: green;
+  margin-left: 5px;
+}
+
+.checkbox-label {
+  cursor: pointer;
+  display: block;
+  border-radius: 3px;
+  width: 19px;
+  height: 19px;
+  background-color: #e1e1e1;
+  margin-right: 160px;
+}
+
+.checkbox-label::after {
+  content: "Remember My password";
+  position: absolute;
+  left: 29px;
+  white-space: nowrap;
+}
+
+.submit-button {
+  padding: 13px 50px;
+  border-radius: 9px;
+  border: none;
+  color: white;
+  font-size: 22px;
+  font-family: inherit;
+  font-weight: inherit;
+  float: right;
+  cursor: pointer;
+  outline: none;
+  box-shadow: 0 4px 9px 1px rgba(0, 0, 0, 0);
+  transition: box-shadow 0.7s ease-in-out;
+}
+
+.submit-button:hover {
+  box-shadow: 0 4px 9px 1px rgba(0, 0, 0, 0.75);
+}
+
+.submit-button--login {
+  background-image: linear-gradient(120deg, #004c6c, #4fb6e2);
+  margin-top: 30px;
+  margin-left: 20px;
+}
+
+.submit-button--register {
+  background-image: linear-gradient(120deg, #aa7800, #ffb400);
+  margin-top: 25px;
+}
+
+.invalid {
+  background: 92% no-repeat url("./assets/warning-sign.png") white;
+}
+
+.valid {
+  background: 94% no-repeat url("./assets/check-icon.png") white;
+}
+
+/* .input-field:invalid {
+  background: 92% no-repeat url("./assets/warning-sign.png") white;
+}
+
+.input-field:valid {
+   background: 94% no-repeat url("./assets/check-icon.png") white;
+} */

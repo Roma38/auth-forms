@@ -37,15 +37,13 @@ body {
 .container__header__title {
   font-size: 34px;
   margin-right: 20px;
-
 }
 
 .container__header__icon {
   background-color: #259cb1;
   border-radius: 100%;
   display: inline-block;
-  min-width: 74px;
-  width: 74px;
+  flex: 0 0 74px;
   height: 74px;
   display: flex;
   justify-content: center;
@@ -60,7 +58,7 @@ body {
 
 .forms-wrapper {
   display: flex;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
 }
 
 .form {
@@ -120,11 +118,11 @@ body {
 
 .form-title {
   font-size: 20px;
-  margin: 0;
-  margin-bottom: 33px;
+  margin: 0 0 33px;
 }
 
 .input-label {
+  display: block;
   font-size: 16px;
   font-weight: 400;
   color: #a7a7a7;
@@ -133,15 +131,14 @@ body {
 .popup {
   position: absolute;
   max-width: 256px;
-  /* color: #cbcbcb; */
   background-color: white;
   border-radius: 6px;
   box-shadow: 0 4px 9px 1px rgba(0, 0, 0, 0.15);
   padding: 15px;
   left: -6vw;
   top: 35px;
-  /* font-size: 14px; */
-  display: none;
+  opacity: 0;
+  transition: opacity 0.7s ease-in-out;
 }
 
 .checkbox-wrapper {
@@ -158,12 +155,14 @@ body {
 
 .checkbox-label:hover + .popup {
   display: block;
+  opacity: 1;
 }
 
 .invisibleCheckbox:checked + .checkbox-label::before {
   content: "✓";
   color: green;
   margin-left: 5px;
+  position: absolute;
 }
 
 .checkbox-label {
@@ -213,18 +212,51 @@ body {
   margin-top: 25px;
 }
 
-.invalid {
-  background: 92% no-repeat url("./assets/warning-sign.png") white;
+.invalid + .mark-icon {
+  background: no-repeat url("./assets/warning-sign.png");
+  width: 5px;
+  height: 20px;
+  right: 28px;
+  top: 32px;
+  position: absolute;
 }
 
-.valid {
-  background: 94% no-repeat url("./assets/check-icon.png") white;
+.valid + .mark-icon {
+  background: no-repeat url("./assets/check-icon.png");
+  width: 20px;
+  height: 20px;
+  right: 18px;
+  top: 36px;
+  position: absolute;
 }
 
-/* .input-field:invalid {
-  background: 92% no-repeat url("./assets/warning-sign.png") white;
+.form.form--register .mark-icon {
+  top: 32px;
 }
 
-.input-field:valid {
-   background: 94% no-repeat url("./assets/check-icon.png") white;
-} */
+.input-wrapper, .input-label {
+  position: relative;
+}
+
+@media (max-width: 650px) {
+  .container__header__title {
+    font-size: 26px;
+  }
+  .container__header__icon {
+    height: 55px;
+    flex-basis: 55px;
+    margin: 13px;
+  }
+
+  .container__header__icon img {
+    height: 30px;
+  }
+
+  .forms-wrapper {
+    flex-direction: column;
+  }
+
+  .forms-divider {
+    display: none;
+  }
+}
